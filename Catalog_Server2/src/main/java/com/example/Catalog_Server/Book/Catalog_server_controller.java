@@ -25,7 +25,6 @@ public class Catalog_server_controller {
 	@RequestMapping("/BookItem/{id}")
 	public Book GetByItem(@PathVariable int id)
 	{
-		
 		return (Book) bookService.GetBookByItem(id);
 		
 	}

@@ -1,4 +1,4 @@
-package com.example.Catalog_Server.Book;
+package com.example.Order_Server.purchase;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,6 +15,12 @@ public class Book {
     @GeneratedValue(
         strategy = GenerationType.SEQUENCE)
 	private int id;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	@Column(name ="BookName")
 	private String BookName;
 	@Column(name ="price")
@@ -40,7 +46,6 @@ public class Book {
 		super();
 		BookName = bookName;
 		this.price = price;
-		this.id=id;
 	
 	}
 	public String getBookName() {
@@ -55,12 +60,7 @@ public class Book {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+
 	
 	@Override
 	public String toString() {

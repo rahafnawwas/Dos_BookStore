@@ -2,6 +2,8 @@ package com.example.front_end.front;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -10,6 +12,16 @@ import javax.persistence.Table;
 public class Book {
 
 	@Id
+    @GeneratedValue(
+        strategy = GenerationType.SEQUENCE)
+	private int id;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	@Column(name ="BookName")
 	private String BookName;
 	@Column(name ="price")
 	private int price;

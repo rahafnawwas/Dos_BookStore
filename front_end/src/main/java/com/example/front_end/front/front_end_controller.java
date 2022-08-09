@@ -24,14 +24,19 @@ public class front_end_controller {
 	}
 	
 	@RequestMapping(value = "/info/{item}")
-	public Book info(@PathVariable String item)
+	public Book info(@PathVariable int item)
 	{
 		return frontService.info(item);
 	}
 	
+	@RequestMapping(value = "/BookIDinvalid/{id}")
+	public void invalidData(@PathVariable int id)
+	{
+		frontService.invalidBook(id);
+	}
 	
 	@RequestMapping(method =RequestMethod.PUT ,value = "/purchase/{item}")
-	public String purchase(@PathVariable String item)
+	public String purchase(@PathVariable int item)
 	{
 		return frontService.purchase(item);
 	}
